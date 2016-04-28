@@ -13,7 +13,7 @@ public class Coin /*TODO implements Comparable<Coin> */ {
 	 * @pre the value is positive
 	 */
 	public Coin(int value) {
-		this(value, "Baht");
+		this(value, "dollar");
 	}
 	
 	public Coin(int value, String currency) {
