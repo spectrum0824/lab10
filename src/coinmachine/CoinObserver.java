@@ -14,7 +14,7 @@ import javax.swing.SwingConstants;
 
 public class CoinObserver extends JFrame implements Observer{
 	public CoinObserver(){
-		super("asdsadsa");
+		super("");
 		this.initComponent();
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
