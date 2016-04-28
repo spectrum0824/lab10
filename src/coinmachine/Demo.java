@@ -1,4 +1,5 @@
 package coinmachine;
+import java.util.Observer;
 import java.util.Scanner;
 
 /**
@@ -56,13 +57,18 @@ public class Demo {
 	 * Run a console demo.
 	 * @param args not used
 	 */
+	final static int capacity = 10;
+	static CoinMachine machineMain = new CoinMachine( capacity );
 	public static void main(String[] args) {
-		final int capacity = 10;  // how many coins the machine can hold
-		
-		CoinMachine machine = new CoinMachine( capacity );
 		Demo demo = new Demo();
 		//TODO add observers
-		demo.insertDialog(machine);
+		CoinObserver a = new CoinObserver();
+		CoinObserver2 b = new CoinObserver2(); 
+		machineMain.addObserver(a);
+		machineMain.addObserver(b);
+		a.run();
+		b.run();
+		demo.insertDialog(machineMain);
 	}
 }
 

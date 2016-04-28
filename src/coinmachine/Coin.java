@@ -13,7 +13,7 @@ public class Coin /*TODO implements Comparable<Coin> */ {
 	 * @pre the value is positive
 	 */
 	public Coin(int value) {
-		this(value, "dollar");
+		this(value, "Baht");
 	}
 	
 	public Coin(int value, String currency) {
@@ -63,7 +63,11 @@ public class Coin /*TODO implements Comparable<Coin> */ {
 	public boolean equals(Object obj) {
 //TODO Write a correct equals method for Coin.
 //     You can assume that the currency is never null.
-		return this == obj;
+		if(!(obj instanceof Coin)){
+			return false;
+		}
+		Coin coin = (Coin)obj;
+		return (this.value == coin.getValue() && this.currency.equals(coin.getCurrency()));
 	}
 
 	/**
